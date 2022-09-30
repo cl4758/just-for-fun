@@ -1,23 +1,29 @@
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import Home from "./routes/home";
+import About from "./routes/about";
+import Misc from "./routes/misc";
+import HeaderBar from './components/HeaderBar';
+import { MantineProvider } from '@mantine/core';
+
 
 function App() {
+  const routes = [{ link: '/', label: 'Home', links: [] },
+  { link: 'about', label: 'About', links: [] },
+  { link: 'misc', label: 'Misc', links: [] }];
+
   return (
-    <div>
-      <h1>Stuff!</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/about">About</Link> |{" "}
-        <Link to="/misc">Misc</Link>
-      </nav>
-      <Outlet />
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <HeaderBar links={routes} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="misc" element={<Misc />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Outlet /> */}
+    </MantineProvider>
   );
 }
 
