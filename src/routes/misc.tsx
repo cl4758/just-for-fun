@@ -1,7 +1,11 @@
-export default function misc() {
+import { Container } from '@mantine/core';
+
+function misc() {
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>misc</h2>
-    </main>
+    <Container>
+      <h2>Misc</h2>
+    </Container>
   );
 }
+
+export default misc;

@@ -22,7 +22,6 @@ function App() {
           <Route path="misc" element={<Misc />} />
         </Routes>
       </BrowserRouter>
-      {/* <Outlet /> */}
     </MantineProvider>
   );
 }

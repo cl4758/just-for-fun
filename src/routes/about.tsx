@@ -1,7 +1,11 @@
-export default function about() {
+import { Container } from '@mantine/core';
+
+function about() {
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <Container>
       <h2>About</h2>
-    </main>
+    </Container>
   );
 }
+
+export default about;

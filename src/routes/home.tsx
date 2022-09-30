@@ -1,7 +1,11 @@
-export default function home() {
+import { Container } from '@mantine/core';
+
+function home() {
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <Container>
       <h2>Home</h2>
-    </main>
+    </Container>
   );
 }
+
+export default home;

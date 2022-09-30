@@ -5,7 +5,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   inner: {
-    height: 56,
+    height: 50,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -13,12 +13,6 @@ const useStyles = createStyles((theme) => ({
 
   links: {
     [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('sm')]: {
       display: 'none',
     },
   },
@@ -63,7 +57,6 @@ function HeaderBar({ links }: HeaderSearchProps) {
             <a
               href={link.link}
               className={classes.link}
-
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
@@ -80,7 +73,6 @@ function HeaderBar({ links }: HeaderSearchProps) {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
       </a>
@@ -88,7 +80,7 @@ function HeaderBar({ links }: HeaderSearchProps) {
   });
 
   return (
-    <Header height={56} mb={120}>
+    <Header height={56}>
       <Container>
         <div className={classes.inner}>
           <Group spacing={5} className={classes.links}>
