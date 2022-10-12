@@ -1,11 +1,11 @@
 import { Container } from '@mantine/core';
 
-function misc() {
+function resume() {
   return (
     <Container>
-      <h2>Misc</h2>
+      <h2>Resume</h2>
     </Container>
   );
 }
 
-export default misc;
+export default resume;

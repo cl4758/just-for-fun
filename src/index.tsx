@@ -5,7 +5,7 @@ import { MantineProvider } from '@mantine/core';
 import './index.css';
 import App from './App';
 import About from "./routes/about";
-import Misc from "./routes/misc";
+import Resume from "./routes/resume";
 import HeaderBar from './components/HeaderBar';
 import reportWebVitals from './reportWebVitals';
 

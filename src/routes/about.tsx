@@ -1,11 +1,19 @@
-import { Container } from '@mantine/core';
+import { Container, createStyles } from '@mantine/core';
 
-function about() {
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    marginLeft: 0
+  },
+}));
+
+function About() {
+  const { classes } = useStyles();
+
   return (
-    <Container>
+    <Container className={classes.wrapper}>
       <h2>About</h2>
     </Container>
   );
 }
 
-export default about;
+export default About;
