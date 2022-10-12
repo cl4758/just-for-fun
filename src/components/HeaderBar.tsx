@@ -1,5 +1,4 @@
 import { createStyles, Header, Group, Menu, Container, Center, NavLink } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import ColorSchemeToggle from './ColorSchemeToggle';
 
 
@@ -32,11 +31,11 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.md,
     fontWeight: 500,
     justifyContent: 'center',
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0]
     },
   },
 

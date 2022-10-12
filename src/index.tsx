@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MantineProvider } from '@mantine/core';
 import './index.css';
 import App from './App';
-import About from "./routes/about";
-import Resume from "./routes/resume";
-import HeaderBar from './components/HeaderBar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -14,7 +9,6 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-
   <App />
 );
 

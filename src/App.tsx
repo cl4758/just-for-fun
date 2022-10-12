@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from "./routes/home";
 import About from "./routes/about";
-import Resume from "./routes/resume";
+import ResumePDF from "./components/pages/ResumePDF";
 import HeaderBar from './components/HeaderBar';
 import { MantineProvider, ColorSchemeProvider, ColorScheme } from '@mantine/core';
 
@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="resume" element={<Resume />} />
+            <Route path="resume" element={<ResumePDF />} />
           </Routes>
         </BrowserRouter>
       </MantineProvider>
