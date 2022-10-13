@@ -1,4 +1,4 @@
-import { createStyles, Grid, Group, Menu, Container, Center, NavLink } from '@mantine/core';
+import { createStyles, Grid, Container } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   resume: {

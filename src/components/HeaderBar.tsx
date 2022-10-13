@@ -1,4 +1,4 @@
-import { createStyles, Header, Group, Menu, Container, Center, NavLink } from '@mantine/core';
+import { createStyles, Header, Group, Menu, Container, Center } from '@mantine/core';
 import ColorSchemeToggle from './ColorSchemeToggle';
 
 

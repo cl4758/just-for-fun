@@ -1,6 +1,6 @@
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
 import { Container, createStyles } from '@mantine/core';
-import pdf from '../../assets/resume.pdf';
+import pdf from '../../assets/resume-final.pdf';
 
 const useStyles = createStyles((theme) => ({
   resume: {
