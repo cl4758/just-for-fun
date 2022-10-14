@@ -6,6 +6,10 @@ const useStyles = createStyles((theme) => ({
     alignContent: 'center',
     justifyContent: 'center'
   },
+  header: {
+    color: theme.colorScheme === 'dark' ? '#f9a825' : '#2196f3',
+    fontWeight: 500
+  }
 }));
 
 function About() {
@@ -13,7 +17,7 @@ function About() {
 
   return (
     <Container>
-      <h2>About</h2>
+      <h2 className={classes.header}>About Me</h2>
       <Grid>
         <Grid.Col span={6}>
           <Image src={mooseKiss} width={300}></Image>
@@ -22,6 +26,12 @@ function About() {
           <p>
             Hi! I'm a software engineer based in New York City.
             I graduated from NYU Stern in 2022 with a double major in economics and computer science.
+            I'm currently working at BlackRock as a software engineer on backend services.
+            <br></br><br></br>
+            Outside of work, you'll most often find me with my dog, Moose. He loves taking walks,
+            especially when they end at the dog park. Otherwise, I spend most of my time running,
+            reading, and baking. Personal favorite projects including baking sourdough with fun flavors,
+            brewing kombucha, attempting to make nut butters out of every nut imaginable, and super long runs.
           </p>
         </Grid.Col>
       </Grid>
