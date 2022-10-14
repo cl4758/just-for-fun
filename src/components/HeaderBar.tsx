@@ -1,18 +1,18 @@
-import { createStyles, Header, Group, Menu, Container, Center } from '@mantine/core';
+import { createStyles, Header, Group, Menu, Text, Center } from '@mantine/core';
 import ColorSchemeToggle from './ColorSchemeToggle';
 
 
 const useStyles = createStyles((theme) => ({
   inner: {
-    height: 50,
+    height: '5vh',
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginRight: 65
+    marginTop: '2vh',
+    marginRight: '5vw'
   },
 
   header: {
-    // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1]
     borderBottom: 0
   },
 
@@ -21,7 +21,30 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    marginRight: 20
+    '>*:nth-of-type(3n+1)': {
+      color: theme.colorScheme === 'dark' ? '#f6ed48' : '#43a047'
+    },
+    '>*:nth-of-type(3n+2)': {
+      color: theme.colorScheme === 'dark' ? '#f9a825' : '#2196f3'
+    },
+    '>*:nth-of-type(3n+3)': {
+      color: theme.colorScheme === 'dark' ? '#f48fb1' : '#7e57c2'
+    },
+    gap: '1vw'
+  },
+
+  name: {
+    marginLeft: '5vw',
+    fontSize: 28,
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      fontSize: 16,
+    },
+    fontWeight: 630,
+    // color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    background: theme.colorScheme === 'dark' ? 'linear-gradient(to right,  #f6ed48, #f9a825, #f48fb1 )' :
+      'linear-gradient(to right, #43a047, #2196f3,  #7e57c2)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent'
   },
 
   link: {
@@ -31,12 +54,15 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.md,
-    fontWeight: 500,
-    justifyContent: 'center',
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0]
+    fontSize: theme.fontSizes.lg,
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      fontSize: 12,
     },
+    fontWeight: 450,
+    justifyContent: 'center'
+    // '&:hover': {
+    //   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0]
+    // },
   },
 
   linkLabel: {
@@ -90,10 +116,13 @@ function HeaderBar({ links }: HeaderSearchProps) {
   return (
     <Header height={56} className={classes.header}>
       <div className={classes.inner}>
-        <Group spacing={5} className={classes.links}>
-          {items}
+        <Text className={classes.name}>CHRISTINE LAI</Text>
+        <Group>
+          <Group className={classes.links}>
+            {items}
+          </Group>
+          <ColorSchemeToggle />
         </Group>
-        <ColorSchemeToggle />
       </div>
     </Header>
   );

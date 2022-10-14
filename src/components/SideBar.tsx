@@ -1,21 +1,22 @@
-import { Menu, Aside, Text, createStyles, Group } from '@mantine/core';
-import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons';
+import { Footer, Aside, MediaQuery, createStyles, Group } from '@mantine/core';
+import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconMail } from '@tabler/icons';
 
 
 const useStyles = createStyles((theme) => ({
   side: {
     borderLeft: 0,
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
-  content: {
-    marginBottom: 20
-  },
-  inner: {
-    height: 50,
+
+  footer: {
     display: 'flex',
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    marginRight: '3vw'
+  },
+
+  content: {
+    marginBottom: '3vh',
   },
 
   link: {
@@ -46,8 +47,9 @@ const useStyles = createStyles((theme) => ({
 function SideBar() {
   const { classes } = useStyles();
 
-  const links = [{ link: 'https://github.com/cl4758/', label: <IconBrandGithub className={classes.icon} /> },
+  const links = [{ link: 'mailto:christine.lai.00@gmail.com', label: <IconMail className={classes.icon} /> },
   { link: 'https://linkedin.com/in/lai-christine/', label: <IconBrandLinkedin className={classes.icon} /> },
+  { link: 'https://github.com/cl4758/', label: <IconBrandGithub className={classes.icon} /> },
   { link: 'https://instagram.com/christinelai_', label: <IconBrandInstagram className={classes.icon} /> }];
 
   const items = links.map((link) => {
@@ -65,12 +67,22 @@ function SideBar() {
   });
 
   return (
-    <Aside width={{ base: 100 }} className={classes.side}>
-      <Group spacing={5} className={classes.content}>
-        {items}
-      </Group>
-
-    </Aside>
+    <>
+      <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+        <Aside width={{ base: 100 }} className={classes.side}>
+          <Group className={classes.content}>
+            {items}
+          </Group>
+        </Aside>
+      </MediaQuery>
+      <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+        <Footer height={40} className={classes.footer}>
+          <Group spacing={2} className={classes.content}>
+            {items}
+          </Group>
+        </Footer>
+      </MediaQuery>
+    </>
   );
 }
 

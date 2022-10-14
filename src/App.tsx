@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CookiesProvider, useCookies } from "react-cookie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from "./routes/home";
+import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import ResumePDF from "./components/pages/ResumePDF";
 import HeaderBar from './components/HeaderBar';
@@ -13,9 +13,9 @@ import { useColorScheme, useLocalStorage } from '@mantine/hooks';
 
 function App() {
 
-  const routes = [{ link: '/', label: 'Home', links: [] },
-  { link: 'about', label: 'About', links: [] },
-  { link: 'resume', label: 'Resume', links: [] }];
+  const routes = [{ link: '/', label: 'HOME', links: [] },
+  { link: 'about', label: 'ABOUT', links: [] },
+  { link: 'resume', label: 'RESUME', links: [] }];
 
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
@@ -34,8 +34,7 @@ function App() {
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-        <AppShell header={<HeaderBar links={routes} />} aside={<SideBar />} >
-          {/* <HeaderBar links={routes} /> */}
+        <AppShell header={<HeaderBar links={routes} />} aside={<SideBar />} footer={<SideBar />}>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
