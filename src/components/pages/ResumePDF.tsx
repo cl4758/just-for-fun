@@ -1,35 +1,34 @@
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
-import { Container, createStyles } from '@mantine/core';
+import { Container, createStyles, Button } from '@mantine/core';
 import pdf from '../../assets/resume-final.pdf';
+import { IconDownload } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   resume: {
     // marginTop: 10,
-    padding: 30,
+    padding: '3vh',
     justifyContent: 'center',
     alignContent: 'center',
 
-    '>*:first-child': {
-      margin: '0 auto',
+    '>.react-pdf__Page__canvas': {
+      margin: 'auto',
       borderStyle: 'solid',
       borderColor: theme.colors.dark[2],
-    }
+      width: '61vh',
+      height: '79vh'
+    },
+
+    '>.react-pdf__Page__annotations': {
+      height: '2vh'
+    },
   },
-  header: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  left: {
-    textAlign: 'start',
-    fontSize: theme.fontSizes.sm
-  },
-  right: {
-    textAlign: 'end',
-    fontSize: theme.fontSizes.sm
-  },
-  center: {
-    textAlign: 'center'
+
+
+  buttonWrapper: {
+    display: 'flex',
+    justifyContent: 'center'
   }
+
 }));
 
 
@@ -41,6 +40,11 @@ function ResumePDF() {
       <Document file={pdf}>
         <Page pageNumber={1} className={classes.resume} />
       </Document>
+      <div className={classes.buttonWrapper}>
+        <a href={pdf} target='_blank' rel='noopener noreferrer'>
+          <Button rightIcon={<IconDownload />}>Download</Button>
+        </a>
+      </div>
     </Container>
   )
 
