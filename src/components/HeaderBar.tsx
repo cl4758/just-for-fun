@@ -6,12 +6,14 @@ const useStyles = createStyles((theme) => ({
   inner: {
     height: 50,
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    marginRight: 65
   },
 
   header: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1]
+    // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1]
+    borderBottom: 0
   },
 
   main: {
@@ -19,9 +21,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    // [theme.fn.smallerThan('sm')]: {
-    //   display: 'none',
-    // },
+    marginRight: 20
   },
 
   link: {
@@ -42,6 +42,8 @@ const useStyles = createStyles((theme) => ({
   linkLabel: {
     justifyContent: 'center'
   },
+
+
 }));
 
 interface HeaderSearchProps {
@@ -87,14 +89,12 @@ function HeaderBar({ links }: HeaderSearchProps) {
 
   return (
     <Header height={56} className={classes.header}>
-      <Container>
-        <div className={classes.inner}>
-          <Group spacing={5} className={classes.links}>
-            {items}
-          </Group>
-          <ColorSchemeToggle />
-        </div>
-      </Container>
+      <div className={classes.inner}>
+        <Group spacing={5} className={classes.links}>
+          {items}
+        </Group>
+        <ColorSchemeToggle />
+      </div>
     </Header>
   );
 }
