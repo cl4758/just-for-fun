@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'center'
   },
   header: {
-    color: theme.colorScheme === 'dark' ? '#f9a825' : '#2196f3',
+    color: theme.colorScheme === 'dark' ? '#e3be37' : '#74dae4',
     fontWeight: 500
   }
 }));
@@ -26,7 +26,8 @@ function About() {
           <p>
             Hi! I'm a software engineer based in New York City.
             I graduated from NYU Stern in 2022 with a double major in economics and computer science.
-            I'm currently working at BlackRock as a software engineer on backend services.
+            I'm currently working at BlackRock as a software engineer on backend services. I'm interested in sustainability,
+            healthcare, and economics.
             <br></br><br></br>
             Outside of work, you'll most often find me with my dog, Moose. He loves taking walks,
             especially when they end at the dog park. Otherwise, I spend most of my time running,
