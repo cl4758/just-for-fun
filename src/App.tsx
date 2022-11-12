@@ -9,13 +9,14 @@ import SideBar from './components/SideBar';
 import { MantineProvider, ColorSchemeProvider, ColorScheme, AppShell } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import RunningProjects from "./components/pages/RunningProjects";
+import Tracking from "./components/pages/Tracking";
 
 
 function App() {
 
   const routes = [{ link: '/', label: 'HOME' },
   { link: 'about', label: 'ABOUT' },
-  { link: 'projects', label: 'PROJECTS', links: [{ link: 'projects/running', label: 'RUNNING' }] },
+  { link: 'projects', label: 'PROJECTS', links: [{ link: 'projects/running', label: 'RUNNING' }, { link: 'projects/tracking', label: 'TRACKING' }] },
   { link: 'resume', label: 'RESUME' }];
 
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -44,6 +45,7 @@ function App() {
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Projects />} />
               <Route path="projects/running" element={<RunningProjects />} />
+              <Route path="projects/tracking" element={<Tracking />} />
               <Route path="resume" element={<ResumePDF />} />
             </Routes>
 

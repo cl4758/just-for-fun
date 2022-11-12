@@ -13,14 +13,14 @@ const useStyles = createStyles((theme) => ({
   }
 }));
 
-function Projects() {
+function Tracking() {
   const { classes } = useStyles();
 
   return (
     <Container>
-      <h2 className={classes.header}>Projects</h2>
+      <h2 className={classes.header}>Tracking</h2>
     </Container>
   );
 }
 
-export default Projects;
+export default Tracking;

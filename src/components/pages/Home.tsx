@@ -18,7 +18,7 @@ function Home() {
   return (
     <Container>
       <h2 className={classes.header}>Home</h2>
-      <p>Hi! This site is currently under construction, please check back later!</p>
+      <p>Hi! This site is currently under construction, but feel free to take a look around!</p>
       <Image src={image} width={'50vw'} />
     </Container>
   );

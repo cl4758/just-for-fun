@@ -1,4 +1,4 @@
-import { Card, Container, createStyles, Grid, Image, Space, Stack } from '@mantine/core';
+import { Card, Container, createStyles, Image, Space, Text } from '@mantine/core';
 import { BadgeCard } from '../cards/BadgeCard';
 import { HorizontalCard } from '../cards/HorizontalCard';
 import centralPark from '../../assets/race-reports/centralPark.md';
@@ -22,6 +22,8 @@ function RunningProjects() {
   return (
     <Container>
       <h2 className={classes.header}>Running</h2>
+      <Text>Some stuff I've been up to: </Text>
+      <Space h="md" />
       {/* <Grid gutter='xl'>
         <Grid.Col span={4}>
           <BadgeCard image='' title='ashdsj title' description='description' />
