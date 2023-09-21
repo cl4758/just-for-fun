@@ -16,7 +16,8 @@ const useStyles = createStyles((theme) => ({
 
   header: {
     borderBottom: 0,
-    height: '5vh'
+    height: '5vh',
+    backgroundColor: 'transparent'
   },
 
   main: {
