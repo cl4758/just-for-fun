@@ -1,6 +1,4 @@
-import { Card, Container, createStyles, Grid, Image, Space, Stack } from '@mantine/core';
-import { BadgeCard } from '../cards/BadgeCard';
-import { HorizontalCard } from '../cards/HorizontalCard';
+import { Container, createStyles } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   photo: {

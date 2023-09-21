@@ -1,5 +1,4 @@
-import { Card, Container, createStyles, Image, Space, Text } from '@mantine/core';
-import { BadgeCard } from '../cards/BadgeCard';
+import { Container, createStyles, Space, Text } from '@mantine/core';
 import { HorizontalCard } from '../cards/HorizontalCard';
 import centralPark from '../../assets/race-reports/centralPark.md';
 import tarc from '../../assets/race-reports/50mile.md';

@@ -69,7 +69,7 @@ function SideBar() {
   return (
     <>
       <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-        <Aside width={{ base: 100 }} className={classes.side}>
+        <Aside hiddenBreakpoint="sm" width={{ xs: 0, sm: 100 }} className={classes.side}>
           <Group className={classes.content}>
             {items}
           </Group>

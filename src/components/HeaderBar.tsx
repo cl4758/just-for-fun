@@ -2,7 +2,6 @@ import { createStyles, Header, Group, Menu, Text, Center, Burger, Transition, Pa
 import { IconChevronDown } from '@tabler/icons';
 import ColorSchemeToggle from './ColorSchemeToggle';
 import { useDisclosure } from '@mantine/hooks';
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
@@ -11,12 +10,13 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: '2vh',
+    marginTop: '3vh',
     marginRight: '5vw'
   },
 
   header: {
-    borderBottom: 0
+    borderBottom: 0,
+    height: '5vh'
   },
 
   main: {
@@ -49,7 +49,6 @@ const useStyles = createStyles((theme) => ({
       fontSize: 16,
     },
     fontWeight: 630,
-    // color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
     background: theme.colorScheme === 'dark' ? 'linear-gradient(to right,  #f6ed48, #e3be37,#ec8225, #f48fb1 )' :
       'linear-gradient(to right, #43a047,#74dae4, #2196f3,  #7e57c2)',
     WebkitBackgroundClip: 'text',
@@ -62,7 +61,6 @@ const useStyles = createStyles((theme) => ({
     padding: '8px 12px',
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
-    // color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
     fontSize: theme.fontSizes.lg,
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       fontSize: 12,
@@ -176,7 +174,7 @@ function HeaderBar({ links }: HeaderSearchProps) {
   });
 
   return (
-    <Header height={56} className={classes.header}>
+    <Header className={classes.header} height={60}>
       <div className={classes.inner}>
         <Text className={classes.name}>CHRISTINE LAI</Text>
         <Group>
