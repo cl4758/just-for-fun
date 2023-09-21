@@ -9,7 +9,8 @@ const useStyles = createStyles((theme) => ({
   },
   header: {
     fontWeight: 500,
-    fontSize: '2.5em'
+    fontSize: '2.5em',
+    backgroundColor: 'transparent'
   },
   title: {
     background: theme.colorScheme === 'dark' ? 'linear-gradient(to right, #f48fb1, #ec8225,#e3be37, #f6ed48 )' : 'linear-gradient(to right, #43a047,#74dae4, #2196f3,  #7e57c2)',
